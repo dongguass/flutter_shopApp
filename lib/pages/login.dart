@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class mainPage extends StatefulWidget {
-  mainPage({Key? key}) : super(key: key);
+class loginPage extends StatefulWidget {
+  loginPage({Key? key}) : super(key: key);
 
   @override
-  _mainPageState createState() => _mainPageState();
+  _loginPage createState() => _loginPage();
 }
 
-class _mainPageState extends State<mainPage> {
+class _loginPage extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("主页"),),
+      appBar: AppBar(title: Text("登录"),),
       body: Center(
         child: Text("body"),
       ),
