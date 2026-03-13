@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/api/home.dart';
 import 'package:shop_app/components/home/Category.dart';
 import 'package:shop_app/components/home/Hot.dart';
 import 'package:shop_app/components/home/MoreList.dart';
@@ -14,11 +15,7 @@ class homeView extends StatefulWidget {
 }
 
 class _homeViewState extends State<homeView> {
-  final List<BannerImg> _bannerList = [
-    BannerImg(id: "1", imgUrl: "https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/meituan/1.jpg"),
-    BannerImg(id: "2", imgUrl: "https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/meituan/1.jpg"),
-    BannerImg(id: "3", imgUrl: "https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/meituan/3.jpg")
-  ];
+  List<BannerImg> _bannerList = [];
   // https://yjy-teach-oss.oss-cn-beijing.aliyuncs.com/meituan/1.jpg
 
 
@@ -55,5 +52,18 @@ class _homeViewState extends State<homeView> {
     return CustomScrollView(
       slivers: _getScrollChildren(), // 
     );
+  }
+
+  @override
+  void initState() { 
+    super.initState();
+    _getBannerList();
+  }
+
+  void _getBannerList() async {
+    _bannerList =  await getBannerListAPI();
+    setState(() {
+      
+    });
   }
 }
